@@ -1,0 +1,6 @@
+**Secrets
+docker-compose.yml
+dist
+DockerTesting.egg-info
+venv
+

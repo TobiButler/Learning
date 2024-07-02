@@ -1,0 +1,46 @@
+# Use the official Ubuntu as the base image
+FROM ubuntu:24.04
+
+# use bash
+SHELL ["/bin/bash", "-c"]
+
+# Set environment variables
+# prevents prompts while installing things
+ENV DEBIAN_FRONTEND=noninteractive
+
+# install linux packages
+RUN apt update
+RUN apt install -y curl sudo systemctl gnupg2 unixodbc libssl-dev cifs-utils smbclient
+RUN apt update 
+
+# install pip python package manager
+RUN sudo apt install -y python3-pip
+
+# install virtual environment manager
+RUN sudo apt install -y python3.12-venv
+
+# want to try combining the two runs above with everything else
+
+# create a new virtual environment
+RUN python3 -m venv venv
+
+# if any files in here change, everything after this line gets uncached (needs to run again)
+COPY . .
+
+# move Zscalar certificate to correct location on ubuntu (this is necessary for pip to install project dependencies)
+RUN mv "/Build Secrets/Zscalar_certificate.cer" "/usr/local/share/ca-certificates/Zscalar_certificate.crt"
+RUN sudo update-ca-certificates
+
+# delete directory with secret information
+RUN sudo rm -r "/Build Secrets"
+
+# activate the virtual environment
+ENV PATH="/venv/bin:$PATH"
+
+# install project dependencies into the environment
+RUN python3 -m pip install --editable .
+
+# EXPOSE 1433
+
+# run python project when a container is run
+CMD ["python3", "DockerTesting/test.py"]

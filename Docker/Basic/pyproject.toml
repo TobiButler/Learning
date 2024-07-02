@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["BasicDocker"]
+
+[project]
+name = "BasicDocker"
+version = "0.0.1"
+authors = [
+  {name="Accountability & Research", email="Achieve@azed.gov"},
+]
+
+description = "The codebase is for testing Docker"
+
+readme = "README.md"
+
+requires-python = ">=3.10"
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+# to install the following necessary packages, run pip -m install .
+dependencies = [
+  "pandas==2.2.0",
+  "fonttools==4.47.2",
+  "numpy==1.26.3",
+  "openpyxl==3.1.2",
+  "pandas==2.2.0",
+  "pyodbc==5.0.1",
+  "scikit-learn==1.4.0",
+  "termcolor==2.1.0",
+  "xlsxwriter==3.1.1"
+]
+
+[project.optional-dependencies]
+# to install additional packages for development purposes (visualizations, jupyter notebooks, etc.), run pip -m install .[development]
+development = [
+  "statsmodels==0.14.1",
+  "seaborn==0.13.2",
+  "plotly==5.18.0",
+  "matplotlib==3.8.2",
+  "ipykernel==6.29.1",
+  "ipython==8.21.0"
+]
+
+# to build a package from this repository, cd to the higher-level PublicFile (repo) and run "python -m build" 
+# This requires first installing the build package with "python -m pip install --upgrade build"
+
+# Once the package is built, it can be installed into the current python distribution/environment with 
+# "python -m pip install --editable ."
