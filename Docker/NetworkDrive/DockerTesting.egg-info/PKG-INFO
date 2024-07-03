@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: DockerTesting
+Version: 0.0.1
+Summary: The codebase is for testing Docker
+Author-email: Accountability & Research <Achieve@azed.gov>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pandas==2.2.0
+Requires-Dist: fonttools==4.47.2
+Requires-Dist: numpy==1.26.3
+Requires-Dist: openpyxl==3.1.2
+Requires-Dist: pandas==2.2.0
+Requires-Dist: pyodbc==5.0.1
+Requires-Dist: scikit-learn==1.4.0
+Requires-Dist: termcolor==2.1.0
+Requires-Dist: xlsxwriter==3.1.1
+Provides-Extra: development
+Requires-Dist: statsmodels==0.14.1; extra == "development"
+Requires-Dist: seaborn==0.13.2; extra == "development"
+Requires-Dist: plotly==5.18.0; extra == "development"
+Requires-Dist: matplotlib==3.8.2; extra == "development"
+Requires-Dist: ipykernel==6.29.1; extra == "development"
+Requires-Dist: ipython==8.21.0; extra == "development"

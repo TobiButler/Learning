@@ -1,0 +1,25 @@
+
+services:
+  python_project:
+    build: .
+    image: test
+    volumes:
+      - "./DockerTesting:/DockerTesting" # mount code as a volume
+      - "./Secrets/Run Secrets:/Run Secrets" # mount login information
+      - Asasprdvm01://Asasprdvm01/ACCT/ACCOUNTABILITY/2024
+volumes:
+  Asasprdvm01:
+    driver_opts:
+      type: cifs
+      o: username=tbutler,password=TBazed123###,domain=azed
+      device: //10.219.176.15/ACCT/ACCOUNTABILITY/2024
+
+# command: /bin/bash
+
+# run the container with "docker compose up"
+
+# below worked for mounting server as volume:
+# docker run --rm -it -v "$(pwd)/DockerTesting:/DockerTesting" --cap-add SYS_ADMIN --cap-add DAC_READ_SEARCH test
+# apt install smbclient
+# mkdir /ACCT
+# mount -t cifs -o "username=tbutler,password=TBazed123###,domain=azed" //10.219.176.15/ACCT /ACCT

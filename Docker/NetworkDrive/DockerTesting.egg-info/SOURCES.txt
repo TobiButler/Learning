@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+DockerTesting/__init__.py
+DockerTesting/test.py
+DockerTesting.egg-info/PKG-INFO
+DockerTesting.egg-info/SOURCES.txt
+DockerTesting.egg-info/dependency_links.txt
+DockerTesting.egg-info/requires.txt
+DockerTesting.egg-info/top_level.txt
