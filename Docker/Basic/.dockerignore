@@ -1,0 +1,6 @@
+venv
+dist
+dockerfile
+docker-compose.yml
+Run Secrets 
+.dockerignore

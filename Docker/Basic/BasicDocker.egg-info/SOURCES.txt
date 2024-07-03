@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+BasicDocker/__init__.py
+BasicDocker/test.py
+BasicDocker.egg-info/PKG-INFO
+BasicDocker.egg-info/SOURCES.txt
+BasicDocker.egg-info/dependency_links.txt
+BasicDocker.egg-info/requires.txt
+BasicDocker.egg-info/top_level.txt
