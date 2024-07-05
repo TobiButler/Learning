@@ -21,7 +21,7 @@ jobs:
     - uses: docker/build-push-action@v4
       with:
         context: .
-        file: "Dockerfile.test"
+        file: "dockerfile"
         tags: BasicDocker
         load: true
         cache-from: type=gha
@@ -30,7 +30,7 @@ jobs:
     - name: Run Python Container
       uses: addnab/docker-run-action@v3
       with:
-        image: localpytest:latest
+        image: BasicDocker
         run: dir  
   
     
