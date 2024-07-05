@@ -20,7 +20,7 @@ jobs:
     - uses: docker/setup-buildx-action@v2
     - uses: docker/build-push-action@v4
       with:
-        context: .
+        context: /Docker/Basic
         file: "dockerfile"
         tags: BasicDocker
         load: true
