@@ -18,6 +18,7 @@ jobs:
     - name: checkout code
       uses: actions/checkout@v4
     - name: build docker image
+      working-directory: ./Docker/Basic
       run: docker build -t test .
     - name: run docker container
       run: docker run --rm test
