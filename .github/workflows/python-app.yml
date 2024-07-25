@@ -11,8 +11,8 @@ permissions:
 jobs:
   build:
 
-    runs-on: [self-hosted, Tobis-runner]
-    # runs-on: self-hosted
+    # runs-on: [self-hosted, Tobis-runner]
+    runs-on: self-hosted
 
     steps:
     - name: checkout code
