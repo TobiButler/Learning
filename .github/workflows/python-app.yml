@@ -19,6 +19,8 @@ jobs:
       uses: actions/checkout@v4
     - name: check working directory
       run: dir
+    - name: check user
+      run: whoami
     - name: build docker image
       working-directory: ./Docker/Basic/
       run: docker build -t test .
